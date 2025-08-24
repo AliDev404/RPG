@@ -7,11 +7,9 @@ class Character:
         self.defense = defense
 
     def attack_damage(self):
-        """Basic attack (can be overridden)."""
         return self.atk
 
     def take_damage(self, damage):
-        """Apply damage after defense reduction."""
         actual_damage = max(0, damage - self.defense)
         self.hp = max(0, self.hp - actual_damage)
         return actual_damage
@@ -28,10 +26,9 @@ class Player(Character):
         super().__init__(name, hp, atk, defense)
         self.gold = gold
         self.inventory = []
-        self.weapon = weapon  # (weapon_name, bonus_attack)
+        self.weapon = weapon
 
     def attack_damage(self):
-        """Player's attack includes weapon bonus."""
         return self.atk + self.weapon[1]
 
     def heal(self, amount):
@@ -65,3 +62,4 @@ class Enemy(Character):
         return (f"{self.name} | HP: {self.hp}/{self.max_hp} | "
                 f"ATK: {self.atk} | DEF: {self.defense} | "
                 f"Reward: {self.reward_gold} gold, {self.reward_items}")
+
