@@ -18,7 +18,7 @@ class Character:
         return self.hp > 0
 
     def __str__(self):
-        return f"{self.name} | HP: {self.hp}/{self.max_hp} | ATK: {self.atk} | DEF: {self.defense}"
+        return f"{self.name.capitalize()} | HP: {self.hp}/{self.max_hp} | ATK: {self.atk} | DEF: {self.defense}"
 
 
 class Player(Character):
@@ -41,7 +41,7 @@ class Player(Character):
         self.weapon = (weapon_name, bonus)
 
     def __str__(self):
-        return (f"{self.name} | HP: {self.hp}/{self.max_hp} | "
+        return (f"{self.name.capitalize()} | HP: {self.hp}/{self.max_hp} | "
                 f"ATK: {self.atk}+{self.weapon[1]} | DEF: {self.defense} | "
                 f"Gold: {self.gold} | Weapon: {self.weapon[0]} | "
                 f"Inventory: {self.inventory}")
@@ -59,7 +59,9 @@ class Enemy(Character):
         return {"gold": 0, "items": []}
 
     def __str__(self):
-        return (f"{self.name} | HP: {self.hp}/{self.max_hp} | "
+        return (f"{self.name.capitalize()} | HP: {self.hp}/{self.max_hp} | "
                 f"ATK: {self.atk} | DEF: {self.defense} | "
                 f"Reward: {self.reward_gold} gold, {self.reward_items}")
+
+
 
