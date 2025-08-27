@@ -3,6 +3,7 @@ import Battle as b
 import save
 
 
+
 def Start():
     while True:
         new=input("1) New game: \n2) Load Game\n3) Show all saves\n").strip()
@@ -12,7 +13,7 @@ def Start():
                 Save(name,0)
                 break
             elif new=='2':
-                load(name)
+                Load(name)
                 break
         elif new=='3':
             All_saves()
@@ -31,6 +32,9 @@ The King has promised a reward to anyone who can defeat the Shadow Beast that dw
     
 
 enemy1= c.Enemy("Goblin", hp=15, atk=2, defense=1, reward_gold=5, reward_items=["Rusty Dagger"])
+
+
+
 
 
 
@@ -53,5 +57,3 @@ def Save(name,current_level):
 name = Start()
 player = c.Player(name)
 print(player)
-
-load(name)
