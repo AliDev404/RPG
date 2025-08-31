@@ -44,16 +44,29 @@ for choice,chara in Player_Background_Choices.items():
 	print(f"{choice}: {chara}")
 
 Chapters={
-'1':" The Burning Village",
-'2':"The Crossroads",
-'3': "The Betrayal"
+    'c1':{
+        '1':" The Burning Village",
+        '2':"The Crossroads",
+        '3': "The Betrayal"
+        },
+
+'c2':{
+    },
 }
 
-c1_output={
-'1':"Fight → Battle against 𝕊𝕙𝕒𝕕𝕠𝕨  𝕎𝕠𝕝𝕧𝕖𝕤.",
-'2':"Search → You save a child, who later gives you a healing charm.",
-'3':"Escape → You avoid damage but miss loot.",
+bosses={
+    'b1':{'b':"abc"
+
+    }
 }
+choice_outputs={
+    'c1':{
+        '1':"Fight → Battle against 𝕊𝕙𝕒𝕕𝕠𝕨  𝕎𝕠𝕝𝕧𝕖𝕤.",
+        '2':"Search → You save a child, who later gives you a healing charm.",
+        '3':"Escape → You avoid damage but miss loot.",
+    },
+}
+
 
 
 

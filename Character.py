@@ -1,11 +1,10 @@
 class Character:
-    def __init__(self, name, hp, atk, defense=0,ability=none):
+    def __init__(self, name, hp, atk, defense=0,):
         self.name = name
         self.max_hp = hp
         self.hp = hp
         self.atk = atk
         self.defense = defense
-        self.ability=ability
 
     def attack_damage(self):
         return self.atk
@@ -24,11 +23,10 @@ class Character:
 
 class Player(Character):
     def __init__(self, name, hp=20, atk=5, defense=2, gold=10, weapon=("Normal Sword", 0)):
-        super().__init__(name, hp, atk, defense,ability)
+        super().__init__(name, hp, atk, defense)
         self.gold = gold
         self.inventory = []
         self.weapon = weapon
-        self.ability=ability
 
     def attack_damage(self):
         return self.atk + self.weapon[1]
