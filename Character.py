@@ -1,6 +1,6 @@
 class Character:
     def __init__(self, name, hp, atk, defense=0,):
-        self.name = name
+        self.name = str(name)
         self.max_hp = hp
         self.hp = hp
         self.atk = atk

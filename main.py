@@ -13,9 +13,15 @@ def Start():
             if new=='1':
                 Save(name,0)
                 break
+            
             elif new=='2':
-                Load(name)
+                is_load=Load(name)
+                if is_load[0]==True:
+                    print(f"Name: {name}, Level: {is_load[1]['lvl']}")
+                else:
+                    print(f"Name '{name}' not found in the file.")
                 break
+        
         elif new=='3':
             All_saves()
 
@@ -23,7 +29,7 @@ def Start():
             pass
         
 
-enemy1= c.Enemy("Goblin", hp=15, atk=2, defense=1, reward_gold=5, reward_items=["Rusty Dagger"])
+#enemy1= c.Enemy("Goblin", hp=15, atk=2, defense=1, reward_gold=5, reward_items=["Rusty Dagger"])
 
 
 
@@ -44,5 +50,5 @@ def Save(name,current_level):
     return file.save(name,current_level)
 
 name = Start()
-player = c.Player(name)
-print(player)
+#player = c.Player(name)
+#print(player)
