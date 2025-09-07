@@ -9,19 +9,21 @@ def Start():
     while True:
         new=input("1) New game: \n2) Load Game\n3) Show all saves\n").strip()
         if new=='1' or new == '2':
-            name=input("Enter your name: ").strip().lower()
-            if new=='1':
-                Save(name,0)
-                break
-            
-            elif new=='2':
-                is_load=Load(name)
-                if is_load[0]==True:
-                    print(f"Name: {name}, Level: {is_load[1]['lvl']}")
-                else:
-                    print(f"Name '{name}' not found in the file.")
-                break
-        
+            name=input("Enter your name: ").strip().lower().replace(" ","")
+            if name and not name.isspace(): 
+                if new=='1':
+                    Save(name,0)
+                    break
+                
+                elif new=='2':
+                    is_load=Load(name)
+                    if is_load[0]==True:
+                        print(f"Name: {name}, Level: {is_load[1]['lvl']}")
+                    else:
+                        print(f"Name '{name}' not found in the file.")
+                    break
+            else:
+                print("\a!!name must not be empty or contain space!!")
         elif new=='3':
             All_saves()
 
